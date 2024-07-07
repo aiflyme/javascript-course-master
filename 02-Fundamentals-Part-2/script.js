@@ -95,3 +95,12 @@ checkWinner(avgDolphins, avgKoalas);
 avgDolphins = calcAverage(85, 54, 41);
 avgKoalas = calcAverage(23, 34, 27);
 checkWinner(avgDolphins, avgKoalas);
+
+const friends = ["Steven", "Michael", "Peter"];
+friends.push("Ray");
+friends.unshift("Ivy");
+console.log(friends);
+
+friends.pop();
+friends.shift();
+console.log(friends);
