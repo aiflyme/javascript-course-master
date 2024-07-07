@@ -163,3 +163,49 @@ console.log(
     john.fullName
   }'s ${john.calcBMI().toFixed(2)}`
 );
+
+//Ch02 loop
+const jonasArray = [
+  "jonas",
+  "Chen",
+  2037 - 1983,
+  "teacher",
+  ["Michael", "Peter", "Steven"],
+];
+console.log(jonasArray);
+
+for (let i = 0; i < jonasArray.length; i++) {
+  if (Array.isArray(jonasArray[i])) {
+    let arrs = "";
+    for (const arr of jonasArray[i]) {
+      arrs += arr + ",";
+    }
+    console.log(arrs.slice(0, -1));
+  } else {
+    console.log(jonasArray[i]);
+  }
+}
+
+[125, 555, 44].forEach((num, index) => {
+  console.log(num, index);
+});
+
+const bills1 = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+const tips1 = [];
+const totals1 = [];
+
+for (let i = 0; i < bills1.length; i++) {
+  const tip = calcTip(bills1[i]);
+  tips1.push(tip);
+  totals1.push(bills1[i] + tip);
+}
+console.log(tips1, totals1);
+
+const calcAverage1 = function (bills1) {
+  let sum1 = 0;
+  bills1.forEach((bill, index) => {
+    sum1 += bill;
+  });
+  return sum1 / bills1.length;
+};
+console.log(calcAverage1(bills1), calcAverage1(tips1), calcAverage1(totals1));
