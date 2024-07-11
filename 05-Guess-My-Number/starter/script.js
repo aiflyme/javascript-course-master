@@ -10,13 +10,17 @@ document.querySelector('.check').addEventListener('click', () => {
   //textContent = Number(textContent) - 1;
   document.querySelector('.score').textContent = Number(scoreContent) - 1;
 
+  const displayMessage = function (message) {
+    document.querySelector('.message').textContent = message;
+  };
+
   //if statement
   if (!guess) {
-    document.querySelector('.message').textContent = '🪨 No number!';
+    displayMessage('🪨 No number!');
   }
   //win the game
   else if (Number(guess) === x) {
-    document.querySelector('.message').textContent = 'Correct numer!';
+    displayMessage('Correct numer!');
     //display correct answer
     document.querySelector('.number').textContent = x;
 
@@ -32,12 +36,9 @@ document.querySelector('.check').addEventListener('click', () => {
   } else {
     //guess all time
     if (scoreContent <= 0) {
-      document.querySelector('.message').textContent = 'You lost the game!';
-    }
-    if (Number(guess) > x) {
-      document.querySelector('.message').textContent = 'Too high!';
-    } else if (Number(guess) < x) {
-      document.querySelector('.message').textContent = 'Too low!';
+      displayMessage('You lost the game!');
+    } else {
+      displayMessage(Number(guess) > x ? 'Too high!' : 'Too low!');
     }
   }
 });
