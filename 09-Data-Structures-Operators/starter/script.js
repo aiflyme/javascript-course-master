@@ -15,10 +15,6 @@ const openingHours = {
   },
 };
 
-// Data needed for a later exercise
-const flights =
-  '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
-
 // Data needed for first part of the section
 const restaurant = {
   name: 'Classico Italiano',
@@ -545,3 +541,99 @@ gameEvents.forEach((value, index) => {
 /**
  * String
  */
+const str1 = 'Robin';
+console.log(str1.slice(2));
+
+const announcement = 'All passager come to boarding door, Boarding door 23!';
+console.log(announcement.replace('door', 'gate'));
+console.log(announcement.replace(/door/g, 'gate'));
+
+const [firstName, lastName] = 'Robin Chen'.split(' ');
+
+const newName = ['Mr.', firstName, lastName].join(' ');
+console.log(newName);
+
+const message = 'Go to gate 23!';
+console.log(message.padStart(25, '+').padEnd(35, '-'));
+
+const makeCreditCard = function (number) {
+  const str = number + '';
+  const last = str.slice(-4);
+  console.log(last.padStart(str.length, '*'));
+};
+
+makeCreditCard(2378463864647384);
+makeCreditCard('2378463864647385');
+
+//Repeat
+
+///////////////////////////////////////
+// Coding Challenge #4
+
+/* 
+Write a program that receives a list of variable names written in underscore_case and convert them to camelCase.
+
+The input will come from a textarea inserted into the DOM (see code below), and conversion will happen when the button is pressed.
+
+THIS TEST DATA (pasted to textarea)
+underscore_case
+ first_name
+Some_Variable 
+  calculate_AGE
+delayed_departure
+
+SHOULD PRODUCE THIS OUTPUT (5 separate console.log outputs)
+underscoreCase      ✅
+firstName           ✅✅
+someVariable        ✅✅✅
+calculateAge        ✅✅✅✅
+delayedDeparture    ✅✅✅✅✅
+
+HINT 1: Remember which character defines a new line in the textarea 😉
+HINT 2: The solution only needs to work for a variable made out of 2 words, like a_b
+HINT 3: Start without worrying about the ✅. Tackle that only after you have the variable name conversion working 😉
+HINT 4: This challenge is difficult on purpose, so start watching the solution in case you're stuck. Then pause and continue!
+
+Afterwards, test with your own test data!
+
+GOOD LUCK 😀
+*/
+
+const camelCase = function (word, n) {
+  const arr = word.trim().toLowerCase().split('_');
+  let rs = '';
+  for (const [index, value] of arr.entries()) {
+    rs += index > 0 ? value[0].toUpperCase() : value[0];
+    rs += value.slice(1);
+  }
+  rs = rs.padEnd(20, ' ');
+  rs += '✅'.repeat(n);
+  console.log(rs);
+};
+
+camelCase('underscore_case', 1);
+camelCase(' first_name', 2);
+camelCase('Some_Variable', 3);
+camelCase('delayed_departure', 4);
+camelCase('  calculate_AGE', 5);
+
+///////////////////////////////////////
+// String Methods Practice
+
+const flights =
+  '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
+
+// 🔴 Delayed Departure from FAO to TXL (11h25)
+//              Arrival from BRU to FAO (11h45)
+//   🔴 Delayed Arrival from HEL to FAO (12h05)
+//            Departure from FAO to LIS (12h30)
+//console.log(flights.split('+'));
+for (const flight of flights.split('+')) {
+  const [type, from, to, time] = flight.split(';');
+  const output = `${type.startsWith('_Delayed') ? '🔴' : ''} ${type
+    .slice(1)
+    .replaceAll('_', ' ')} from ${from.slice(0, 3).toUpperCase()} to ${to
+    .slice(0, 3)
+    .toUpperCase()} (${time.replace(':', 'h')})`.padStart(36);
+  console.log(output);
+}
