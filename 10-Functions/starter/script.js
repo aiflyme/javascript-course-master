@@ -3,7 +3,6 @@
 const bookings = [];
 
 const createBooking = function (
-
   flightNum,
   numPassengers = 1,
   price = 199 * numPassengers
@@ -13,7 +12,7 @@ const createBooking = function (
   // price = price || 199;
 
   const booking = {
-    fightNum,
+    flightNum,
     numPassengers,
     price,
   };
@@ -27,23 +26,6 @@ createBooking('LH123', 5);
 createBooking('LH123', undefined, 1000);
 
 //129
-const flight = 'LH234';
-const jonas = {
-  name: 'Robin Chen',
-  passport: 8956485693,
-};
-
-const checkIn = function (flightNum, passenger) {
-  flightNum = 'LH999';
-  passenger.name = 'Mr ' + passenger.name;
-
-  if (passenger.passport === 8956485693) {
-    console.log('Check in');
-  } else {
-    console.log('Wrong passport!');
-
-createBooking('LH123', 3);
-createBooking('LH123', undefined, 3);
 
 const flight = 'LH234';
 const jonas = {
@@ -94,7 +76,6 @@ const upperFirstWord = function (str) {
   const [first, ...others] = str.split(' ');
   return [first.toUpperCase(), ...others].join(' ');
 };
-
 
 //132
 //Higher-order function
@@ -313,8 +294,8 @@ const poll = {
 //   });
 // });
 
-document
-  .querySelector('.poll')
-  .addEventListener('click', poll.registerNewAnswerPrompt.bind(poll));
+// document
+//   .querySelector('.poll')
+//   .addEventListener('click', poll.registerNewAnswerPrompt.bind(poll));
 
 // poll.registerNewAnswerPrompt();
