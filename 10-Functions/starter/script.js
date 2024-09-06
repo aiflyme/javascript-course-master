@@ -3,7 +3,8 @@
 const bookings = [];
 
 const createBooking = function (
-  fightNum,
+
+  flightNum,
   numPassengers = 1,
   price = 199 * numPassengers
 ) {
@@ -40,6 +41,26 @@ const checkIn = function (flightNum, passenger) {
     console.log('Check in');
   } else {
     console.log('Wrong passport!');
+
+createBooking('LH123', 3);
+createBooking('LH123', undefined, 3);
+
+const flight = 'LH234';
+const jonas = {
+  name: 'robin chen',
+  password: 12345678,
+};
+const jonasArr = ['Ray', 'Robin'];
+
+const checkIn = function (flightNum, passengers, passengersArr) {
+  flightNum = 'LH999';
+  passengers.name = 'Mr ' + passengers.name;
+  //passengersArr.push('1');
+
+  if (passengers.password === 12345678) {
+    console.log('Check in');
+  } else {
+    ('Wrong passport!');
   }
 };
 
@@ -59,6 +80,12 @@ newPassport(jonas);
 checkIn(flight, jonas);
 
 //131
+//Is the same as doing...
+const flightNum1 = flight;
+const passenger1 = jonas;
+console.log(flightNum1, passenger1);
+
+//131 Functions Accepting Callback Functions
 const oneWord = function (str) {
   return str.replace(/ /g, '').toLowerCase();
 };
@@ -68,24 +95,24 @@ const upperFirstWord = function (str) {
   return [first.toUpperCase(), ...others].join(' ');
 };
 
-//higher-order function
+
+//132
+//Higher-order function
 const transformer = function (str, fn) {
   console.log(`Original string: ${str}`);
-  console.log(`Transformed string: ${fn(str)}`);
+  console.log(`Transformed sstring: ${fn(str)}`);
 
   console.log(`Transformed by: ${fn.name}`);
 };
-transformer('Javascript is the best!', upperFirstWord);
-transformer('Javascript is the best!', oneWord);
 
-const high5 = function () {
-  console.log('five');
+transformer('Javascript is the best', upperFirstWord);
+transformer('Javascript is the best', oneWord);
+
+const high5 = () => {
+  console.log('~~');
 };
-// document.body.addEventListener('click', high5);
+['Ivy', 'Ray', 'Robin'].forEach(high5);
 
-['Jonas', 'Martha', 'Adam'].forEach(high5);
-
-//132
 const greet = function (greeting) {
   return function (name) {
     console.log(`${greeting} ${name}`);
@@ -104,6 +131,7 @@ const greetArrow = greeting => name => console.log(`${greeting} ${name}`);
 greetArrow('hello')('ray');
 
 //133 the call and apply method
+
 const lufthansa = {
   airline: 'Lufthansa',
   iataCode: 'LH',
@@ -123,6 +151,8 @@ console.log(lufthansa.bookings);
 
 const eurowings = {
   airline: 'Eurowings',
+
+  name: 'Eurowings',
   iataCode: 'EW',
   bookings: [],
 };
