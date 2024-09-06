@@ -10,6 +10,8 @@
         height: 100vh;
         display: flex;
         align-items: center;
+        flex-direction: column;
+        justify-content: space-evenly;
         background: linear-gradient(to top left, #28b487, #7dd56f);
       }
       h1 {
@@ -37,9 +39,17 @@
     </style>
   </head>
   <body>
-    <h1>A Closer Look at Functions</h1>
+    <div>
+      <h1>A Closer Look at Functions</h1>
+    </div>
     <button class="buy">Buy new plane 🛩</button>
     <button class="poll">Answer poll ⁉️</button>
+
+    <div>
+      <div class="pollDetail"></div>
+      <div class="pollList"></div>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>
