@@ -13,6 +13,7 @@ const createBooking = function (
 
   const booking = {
     flightNum,
+
     numPassengers,
     price,
   };
