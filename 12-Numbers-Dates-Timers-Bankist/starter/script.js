@@ -201,7 +201,7 @@ const startLogOutTimer = () => {
   let time = 30;
 
   //Call the timer every second
-  tick();
+  //tick();
   const timer = setInterval(tick, 1000);
   return timer;
 };
@@ -484,8 +484,8 @@ console.log(days1);
 //179 Internationalizing Numbers (Intl)
 
 const options149 = {
-  style: 'currency', //unit
-  unit: 'celsius', //mile-per-hour
+  style: 'currency', //'unit'
+  unit: 'celsius', //'mile-per-hour',
   currency: 'EUR',
   // useGrouping: false,
 };
