@@ -8,9 +8,7 @@
       "type": "node",
       "request": "launch",
       "name": "Launch Program",
-      "skipFiles": [
-        "<node_internals>/**"
-      ],
+      "skipFiles": ["<node_internals>/**"],
       "program": "${workspaceFolder}\\..\\..\\..\\hello-algo\\codes\\javascript\\chapter_divide_and_conquer\\01binary_search_recur.js"
     }
   ]
