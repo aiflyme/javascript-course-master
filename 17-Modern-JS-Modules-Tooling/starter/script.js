@@ -58,7 +58,8 @@ const getLastPost = async function () {
 };
 
 console.log('Start fetching');
-const lastPost = await getLastPost();
+// const lastPost = await getLastPost();
+const lastPost = getLastPost();
 
 console.log(lastPost);
 
@@ -119,3 +120,45 @@ shoppingCart2.addToCart('pizza', 2);
 // const {addToCart} = require('./shoppingCart.js')
 
 // 276 A Brief Introduction to the Command Line
+
+// 277 Introduction to NPM
+// import cloneDeep from './node_modules/lodash-es/cloneDeep.js';
+import cloneDeep from 'lodash-es';
+
+const state = {
+  user: { loginIn: true },
+};
+
+const stateClone = Object.assign({}, state);
+const stateDeepClone = cloneDeep(state);
+
+state.user.loginIn = false;
+console.log(stateClone, stateDeepClone);
+
+// 278 Bundling With Parcel and NPM Scripts
+if (MediaSourceHandle.hot) {
+  module.hot.accept();
+}
+console.log(111222333444);
+
+// 279 Configuring Babel and Polyfilling
+class Person {
+  #greeting = 'Hey';
+  constructor(name) {
+    this.name = name;
+    console.log(`${this.#greeting}, ${this.name}`);
+  }
+}
+const robin = new Person('Robin');
+
+console.log(cart.find(el => el.quantity >= 2));
+
+import 'core-js/stable';
+
+//Polifilling async functions
+import 'regenerator-runtime/runtime';
+
+// 280 Review_ Writing Clean and Modern JavaScript
+// 281 Let's Fix Some Bad Code_ Part 1
+// 282 Declarative and Functional JavaScript Principles
+// 283 Let's Fix Some Bad Code_ Part 2
