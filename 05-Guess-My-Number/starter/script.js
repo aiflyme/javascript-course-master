@@ -15,7 +15,7 @@ document.querySelector('.check').addEventListener('click', () => {
   };
 
   //if statement
-  if (!guess) {
+  if (!guess || Number(guess) > 20 || Number(guess) < 1) {
     displayMessage('🪨 No number!');
   }
   //win the game
@@ -33,6 +33,9 @@ document.querySelector('.check').addEventListener('click', () => {
     //add css background
     document.querySelector('body').style.backgroundColor = '#60b347';
     document.querySelector('.number').style.width = '30rem';
+
+    document.querySelector('.check').disabled = true;
+    document.querySelector('.guess').setAttribute('readonly', true);
   } else {
     //guess all time
     if (scoreContent <= 0) {
@@ -61,6 +64,11 @@ function hander() {
 
   //general new random number
   x = Math.trunc(Math.random() * 20) + 1;
+
+  document.querySelector('.check').disabled = false;
+  // document.querySelector('.guess').setAttribute('readonly', false);
+  document.querySelector('.guess').removeAttribute('readonly');
 }
+
 //score
 //highscore

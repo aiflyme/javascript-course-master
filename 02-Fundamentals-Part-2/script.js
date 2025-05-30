@@ -1,11 +1,11 @@
 "use strict";
 
-// let hasriversLicense = false;
-// const passTest = true;
-// //1.get error is variable don't define
-// //hasriverLicense is not defined
-// if (passTest) hasriverLicense = true;
-// if (hasriversLicense) console.log("I can drive :D");
+let hasDriversLicense = false;
+const passTest = true;
+//1.get error is variable don't define
+//hasriverLicense is not defined
+if (passTest) hasDriversLicense = true;
+if (hasDriversLicense) console.log("I can drive :D");
 
 // //2.can't use reserved word
 // //Unexpected strict mode reserved word
@@ -96,12 +96,15 @@ avgDolphins = calcAverage(85, 54, 41);
 avgKoalas = calcAverage(23, 34, 27);
 checkWinner(avgDolphins, avgKoalas);
 
+//array
 const friends = ["Steven", "Michael", "Peter"];
 friends.push("Ray");
 friends.unshift("Ivy");
 console.log(friends);
 
 friends.pop();
+console.log(friends);
+
 friends.shift();
 console.log(friends);
 
@@ -119,6 +122,7 @@ const bills = [125, 555, 44];
 const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
 const totals = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
 console.log(bills, tips, totals);
+console.log(typeof bills, typeof tips, typeof totals);
 
 //Object
 const jonas = {
@@ -199,7 +203,7 @@ for (let i = 0; i < bills1.length; i++) {
   tips1.push(tip);
   totals1.push(bills1[i] + tip);
 }
-console.log(tips1, totals1);
+console.log(bills1, tips1, totals1);
 
 const calcAverage1 = function (bills1) {
   let sum1 = 0;

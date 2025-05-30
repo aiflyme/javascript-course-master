@@ -1,3 +1,5 @@
+//number string bool undefined null symbol bigint
+
 let js = "amazing";
 // if (js === "amazing") alert("JavaScript is FUN!");
 
@@ -20,6 +22,7 @@ console.log(year);
 console.log(typeof year);
 
 console.log(null);
+console.log(typeof null);
 
 //let const var
 let age = 30;
@@ -29,15 +32,21 @@ const birthYear = 1991;
 // error
 //birthYear=1990;
 //const job;
+console.log(isNaN(12 + 23 + 34 - 8), isNaN("d"));
+console.log(NaN);
+console.log(typeof NaN);
 
+console.log(isFinite(10 / 1));
+console.log(isFinite(10 / 0));
 //Challenging 1
 let marksMass = 78;
 let marksHeight = 1.69;
 let marskBMI = marksMass / marksHeight ** 2;
-
+console.log(marskBMI);
 let johnMass = 92;
 let johnHeight = 1.95;
 let johnBMI = johnMass / johnHeight ** 2;
+console.log(johnBMI);
 
 console.log(marskBMI > johnBMI);
 
@@ -57,15 +66,26 @@ if (marskBMI > johnBMI) {
 } else {
   console.log(`John's BMI is higher than Mark's!`);
 }
+console.log(marskBMI, johnBMI);
 console.log(
-  `Mark's BMI (${marskBMI.toFixed(1)}) is higher than john's (${johnBMI.toFixed(
-    1
+  `Mark's BMI (${marskBMI.toFixed(2)}) is higher than john's (${johnBMI.toFixed(
+    3
   )})`
 );
 
 const inputYear = 1991;
 //number + string -> string
 console.log(inputYear + 11);
+
+console.log(typeof (inputYear + 11));
+console.log("inputYear" + 11);
+console.log(typeof ("inputYear" + 11));
+
+const s = 0b10;
+const n = 0o755;
+const h = 0x755;
+
+console.log(s, n, h);
 
 //NaN
 console.log(Number("Jonas"));

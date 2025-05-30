@@ -11,8 +11,8 @@ html {
 
 body {
   font-family: sans-serif;
-  color: #333;
-  line-height: 1.5;
+  /* color: #333; */
+  /* line-height: 1.5; */
   height: 100vh;
   position: relative;
   display: flex;
