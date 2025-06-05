@@ -199,3 +199,59 @@ const checkDogs = function (first, second) {
 
 checkDogs(dogsJulia, dogsKate);
 checkDogs(dogsJulia2, dogsKate2);
+
+//150 The map Method
+const eurToUsd = 1.1;
+const movementsUsd = movements.map(mov => {
+  return mov * eurToUsd;
+});
+console.log(movements, movementsUsd);
+
+const movementsDesc = movements.map((mov, i, arr) => {
+  if (mov > 0) {
+    return `Movement ${i + 1} You deposited ${mov}}`;
+  } else {
+    return `Movement ${i + 1} You withdrew ${mov}}`;
+  }
+});
+console.log(movementsDesc);
+
+//151 Computeing usernames
+const user = 'Ivy Mo';
+const createUsernames = accs =>
+  accs.forEach(acc => {
+    acc.username = acc.owner
+      .toLocaleLowerCase()
+      .split(' ')
+      .map(name => name[0])
+      .join('');
+  });
+createUsernames(accounts);
+
+console.log(accounts);
+
+//152 The filter method
+const calcDisplayBalance = function (movements) {
+  const balancce = movements.reduce((acc, cur) => acc + cur);
+  labelBalance.textContent = `${balancce} EUR`;
+};
+calcDisplayBalance(account1.movements);
+
+const deposits = movements.filter(mov => mov > 0);
+console.log(deposits);
+
+const withdrawals = movements.filter(mov => mov < 0);
+console.log(withdrawals);
+
+const balance = movements.reduce((acc, cur, i, arr) => {
+  console.log(`Iteration ${i}: ${cur} ${acc}`);
+  return acc + cur;
+}, 0);
+console.log(balance);
+
+//get max number
+const max = movements.reduce((acc, cur) => {
+  if (acc > cur) return acc;
+  else return cur;
+});
+console.log(max);
